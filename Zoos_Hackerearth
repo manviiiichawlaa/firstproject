@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[100000];
+    scanf("%s", word);
+
+    int znum = 0, onum = 0;
+
+    for (int i = 0; word[i] != '\0'; i++) {
+        if (word[i] == 'z')
+            znum++;
+        else if (word[i] == 'o')
+            onum++;
+    }
+
+    if (onum == 2 * znum)
+        printf("Yes");
+    else
+        printf("No");
+
+    return 0;
+}
