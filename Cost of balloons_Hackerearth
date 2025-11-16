@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int g, p;
+        scanf("%d %d", &g, &p);
+        int n;
+        scanf("%d", &n);
+        int count1 = 0;   
+        int count2 = 0;  
+        for (int i = 0; i < n; i++) {
+            int x, y;
+            scanf("%d %d", &x, &y);
+            count1 += x;
+            count2 += y;
+        }
+        int cheaper = (g < p) ? g : p;
+        int costlier = (g > p) ? g : p;
+        int moreSolved = (count1 > count2) ? count1 : count2;
+        int lessSolved = (count1 < count2) ? count1 : count2;
+        int totalCost = moreSolved * cheaper + lessSolved * costlier;
+        printf("%d\n", totalCost);
+    }
+    return 0;
+}
